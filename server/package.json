@@ -1,5 +1,5 @@
 {
-  "name": "techlines",
+  "name": "newphoneline",
   "version": "1.0.0",
   "description": "The backend for techlines",
   "main": "index.js",
@@ -11,16 +11,8 @@
     "server": "node server/index.js",
     "app": "concurrently npm \"npm run server\" \"npm run client\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/benjaminscoding1/techlines.git"
-  },
-  "author": "Benjamin Fischer",
+  "author": "Hyemee Park",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/benjaminscoding1/techlines/issues"
-  },
-  "homepage": "https://github.com/benjaminscoding1/techlines#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "concurrently": "^7.6.0",
