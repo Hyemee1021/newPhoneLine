@@ -18,9 +18,15 @@ import {
 } from "@chakra-ui/react";
 
 import { BiExpand } from "react-icons/bi";
-const ProductCard = ({ product }) => {
+import { FiShoppingCart } from "react-icons/fi";
+import { Link as ReactLink } from "react-router-dom";
+import { StarIcon } from "@chakra-ui/icons";
+import { useState } from "react";
+
+const ProductCard = ({ product, loading }) => {
+  console.log(!loading); //true
   return (
-    <Skeleton _hover={{ size: 1.5 }}>
+    <Skeleton isLoaded={!loading} _hover={{ size: 1.5 }}>
       <Box
         _hover={{ transform: "scale(1.1)", transitionDuration: "0.5s" }}
         borderWidth="1px"
@@ -28,7 +34,12 @@ const ProductCard = ({ product }) => {
         p="4"
         shadow="md"
       >
-        <Image />
+        <Image
+          src={product.images[0]}
+          fallbackSrc="http://via.placeholder.com/150"
+          alt={product.name}
+          height="200px"
+        />
         {product.stock < 5 ? (
           <Badge colorScheme="yellow">Only {product.stock} left</Badge>
         ) : product.stock < 1 ? (
